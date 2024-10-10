@@ -1,16 +1,21 @@
 const express = require("express");
 const jobRoutes = require("./route/jobRoute");
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
 
 
 
 
 const app = express();
+dotenv.config();
 /////////////////////////////////////////////////////////////////////////
 // mongoose.connect("mongodb://localhost:27017/job_app")  //---> server(compass) + database name(if not available then it will create itself when we perform some task)
 //////////////////////////////////////////////////////////////////////////
+//console.log(process.env); //---> it will console the whole environmental variables of our system.
 
-mongoose.connect("mongodb+srv://anandsahani213:fprszorCrDAHDCx4@cluster0.jzn9f.mongodb.net/")
+console.log(process.env.DATABASE_URI);
+
+mongoose.connect(process.env.DATABASE_URI)
 .then(()=> console.log("DB Connected successfully"))
 .catch(()=> console.log("Connecting error database", err))
 

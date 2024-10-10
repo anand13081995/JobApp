@@ -58,4 +58,22 @@ Now we will learn deployment, So create account on Render, and connect github ac
 
 Here render will find some error because our database is in our local system, So now we have to connect our cloud database to be rendered properly. ----> now, in index.js file connect the connection string of cloud atlas mongoDb to mongoose.connect by editing password, then -->
 
-export the whole collection from compass and save the file in JSOn format and then create new conection on compass then copy paste the connection string with password into URI and then connect
+export the whole collection from compass and save the file in JSOn format and then create new conection on compass then copy paste the connection string with password into URI and then connect.
+
+now push the code by git add . and git commit -m "" and git push.
+
+now copy the url which is present on top left side on render and modify in postman and send POST data like this to check that it is working properly or not :-  Post on postman : https://job-app-7187.onrender.com/api/jobs
+and data will be posted : {
+                            "title": "Marketing Manager",
+                            "description": "Market Market Market",
+                            "company": "Market Innovations Inc.",
+                            "location": "Marketville, USA",
+                            "salary": 1500000
+                          }
+
+Then go on MongoDb atlas and on Cluster click on browse collections then find your data that is updated or not. You will find that every thing is working good.
+                     
+Now our cloud database security is important which is present on index.js file in mongoose.connect(""), So --->
+create a .env file then cut and paste the whole connection string into variable and then install => npm i dotenv
+
+Then --> push the code without addidng .env file and rest changes will be added and with commit.
