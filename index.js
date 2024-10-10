@@ -6,7 +6,11 @@ const mongoose = require("mongoose")
 
 
 const app = express();
-mongoose.connect("mongodb://localhost:27017/job_app")  //---> server(compass) + database name(if not available then it will create itself when we perform some task)
+/////////////////////////////////////////////////////////////////////////
+// mongoose.connect("mongodb://localhost:27017/job_app")  //---> server(compass) + database name(if not available then it will create itself when we perform some task)
+//////////////////////////////////////////////////////////////////////////
+
+mongoose.connect("mongodb+srv://anandsahani213:fprszorCrDAHDCx4@cluster0.jzn9f.mongodb.net/")
 .then(()=> console.log("DB Connected successfully"))
 .catch(()=> console.log("Connecting error database", err))
 

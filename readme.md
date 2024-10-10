@@ -54,4 +54,8 @@ use try catch in jobController.js file because if there will be any random data 
 
 now we will handle update API like in postman => http://localhost:10000/api/jobs/6706a5de93c538cd364762c1 then in jobController.js file update code then hit the API by Put then it will be updated.
 
-Now we will learn deployment, So create account on Render.
+Now we will learn deployment, So create account on Render, and connect github account after pushing the code (already done with main gmail) now in root directory option do not select anything if package.json is already present in outside, so we will keep it empty as default.
+
+Here render will find some error because our database is in our local system, So now we have to connect our cloud database to be rendered properly. ----> now, in index.js file connect the connection string of cloud atlas mongoDb to mongoose.connect by editing password, then -->
+
+export the whole collection from compass and save the file in JSOn format and then create new conection on compass then copy paste the connection string with password into URI and then connect
